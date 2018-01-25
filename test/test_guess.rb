@@ -27,7 +27,7 @@ class GuessTest < Minitest::Test
   def test_correct
     card = Card.new("What is the capital of Alaska?", "Juneau")
     guess = Guess.new("Juneau", card)
-    assert_equal true, guess.correct?
+    assert guess.correct?
   end
 
   def test_feedback
@@ -45,22 +45,3 @@ class GuessTest < Minitest::Test
   end
 
 end
-
-#   def test_question_corresponds
-#     card = Card.new("What is the capital of Alaska?", "Juneau")
-#     assert_equal card_1.question, "What is the capital of Alaska?"
-#   end
-#
-#   def test_answer_corresponds
-#     card = Card.new("What is the capital of Alaska?", "Juneau")
-#     assert_equal card.answer, "Juneau"
-#   end
-#
-#   def test_guess_card_method_exists
-#     guess = Guess.new("Juneau", card)
-#     assert_instance_of Guess, guess
-#     assert_equal guess.card, @answer="Juneau"
-#
-#   end
-#
-# end
