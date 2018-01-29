@@ -18,22 +18,22 @@ class Round
     deck.cards[@card_num]
   end
 
-  def record_guess(guess)
-    Guess.new(guess, current_card)
-    # player_response << guess if guess.correct?
-    # @answered_correctly += 1 if guess.correct?
-    # @card_num += 1
+  def record_guess(response)
+    guess = Guess.new(response, current_card)
+    guesses << guess.response
+    @number_correct += 1 if guess.correct?
+    guess
   end
 
   def feedback
-    guess.feedback
+    guesses[@card_num] == guess.correct
   end
 
   def start
 
   end
 
-  def percent_correct 
+  def percent_correct
 
   end
 

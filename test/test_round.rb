@@ -43,28 +43,32 @@ class RoundTest < Minitest::Test
 
     round = Round.new(@deck)
     guess = Guess.new("Juneau", @card_1)
-    assert_equal guess, round.record_guess("Juneau")
+    recorded_guess = round.record_guess("Juneau")
+    assert_instance_of Guess, recorded_guess
+    assert_equal "Juneau", recorded_guess.response
   end
 
   def test_guesses_storage_increases
-    skip
+
     round = Round.new(@deck)
-    round.record_guess("Juneau")
+    recorded_guess = round.record_guess("Juneau")
     assert_equal 1, round.guesses.count
 
   end
 
   def test_feedback_method
-    skip
+
     round = Round.new(@deck)
-    round.record_guess("Juneau")
+    recorded_guess = round.record_guess("Juneau")
     assert_equal "Correct!", round.guesses.first.feedback
 
   end
 
   def test_number_correct_method
     skip
-    round = Round.new(deck)
+    round = Round.new(@deck)
+    number_correct = round.number_correct
+    assert_equal 0, number_correct
 
   end
 
