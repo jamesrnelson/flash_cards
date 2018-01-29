@@ -17,3 +17,7 @@ puts " "
 round.start
 
 puts "This is card number #{round.card_num + 1} out of #{deck.count}."
+puts "#{card_1.question}"
+guess_1 = gets.chomp
+round.record_guess(guess_1)
+puts guess.feedback
