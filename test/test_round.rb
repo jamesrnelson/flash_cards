@@ -43,7 +43,7 @@ class RoundTest < Minitest::Test
 
     round = Round.new(@deck)
     guess = Guess.new("Juneau", @card_1)
-    assert_equal guess.response, round.record_guess("Juneau")
+    assert_equal guess, round.record_guess("Juneau")
   end
 
   def test_guesses_storage_increases
